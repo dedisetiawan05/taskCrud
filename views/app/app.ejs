@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My World</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <script src="/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <%- include('../components/navbar.ejs')%>
+  <center>
+  <div class="fullscreen-bg">
+        <video loop muted autoplay poster=""  class="fullscreen-bg__video">
+            <source src="/forApp.mp4" type="video/mp4">
+        </video>
+  </div>
+   <div class="content">
+       <figure class="text-center text-light">
+            <div class="padding">
+                <blockquote class="blockquote">
+                    <div class="padding">
+                        <p class="title">Welcome To DraftPick App</p>
+                    </div>
+            </blockquote>
+            <blockquote class="blockquote">
+                <p class="padding fs-1 mt-1">"Menang <kbd>DraftPick</kbd>, Besar Kemungkinan <kbd>Victory</kbd>"</p>
+            </blockquote>
+            </div>
+            <figcaption class="blockquote-footer">
+                Someone famous like <cite title="Source Title">Me Hehe :)</cite>
+            </figcaption>
+        </figure>
+</div>   
+<%- include('../components/footer.ejs') %></center>
+</body>
+</html>

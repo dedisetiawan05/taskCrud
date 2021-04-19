@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <!--<%- include('../components/navbar.ejs') %>-->
+    <% if(messages.success) { %>
+                <div class="alert alert-success" role="alert">
+                    <%= messages.success %>
+                </div>
+                <% } %>
+            <% if(messages.successDel) { %>
+                <div class="alert alert-danger" role="alert">
+                    <%= messages.successDel %>
+                </div>
+                <% } %>
+            <% if(messages.error) { %>
+                <div class="alert alert-danger" role="alert">
+                  <button type="button" class="close">&times;</button>
+                    <%= messages.error %>
+                </div>
+            <% } %>
+    <div class="container-sm border border-primary p-3 mt-3">
+        <center><h1>Silahkan Login Terlebih dahulu</h1></center>
+        <form action="/login" method="POST">
+        <div class="form-floating mb-3">
+            <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3 btn-lg">Login</button>
+        <a href="/register" class="btn btn-primary mt-3 mx-2 btn-lg">Buat Akun</a>
+        </form>
+
+    </div>
+    <center><%- include('../components/footer.ejs') %></center>
+    
+</body>
+</html>

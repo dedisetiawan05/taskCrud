@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar draft</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <%- include('../components/navbar.ejs')%>
+    <div class="container">
+        <center><h1 class="mb-3 mt-5">Daftar draft</h1></center>
+            <% if(messages.success) { %>
+                <div class="alert alert-success alert-dismissible"" role="alert">
+                    <%= messages.success %>
+                </div>
+                <% } %>
+            <% if(messages.successDel) { %>
+                <div class="alert alert-danger alert-dismissible"" role="alert">
+                    <%= messages.successDel %>
+                </div>
+                <% } %>
+            <% if(messages.error) { %>
+                <div class="alert alert-danger" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <%= messages.error %>
+                </div>
+            <% } %>
+    <table class="table align-middle mt-5 mb-5 table-striped">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Nama Team</th>
+      <th scope="col">User</th>
+      <th scope="col">Name Hero</th>
+      <th scope="col">Tanggal</th>
+      <th scope="col">Hasil</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% let i=1; drafts.forEach((draft) => { %>
+      <tr>
+        <th scope="row"><%=i++ %></th>
+        <td><% if(draft.isBaned == 1){ %>
+            <b>Banned</b>
+        <% } else {%>
+            <%= draft.nameTeam %>
+        <% } %>
+        </td>
+        <td>
+            <% if(draft.isBaned == 1){ %>
+            <b>Banned</b>
+        <% } else {%>
+            <%= draft.nickName %></td>
+        <% } %>
+        <td><%= draft.nameHero %></td>
+        <td><%= draft.dateDraft %></td>
+        <td>
+            <% if(draft.isWinner == 1){ %>
+            <b>Win</b>
+        <% } else {%>
+            <b>Lose</b>
+        <% } %>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+</div>
+<center><%- include('../components/footer.ejs') %></center>
+</body>
+</html>
